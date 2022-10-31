@@ -9,7 +9,9 @@ app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 app.use("/public", express.static(__dirname + "/public"));
 
-app.get("/", (req, res) => res.render("home"));
+app.get("/", (req, res) => res.render("chatting"));
+app.get("/chatting", (req, res) => res.render("chatting"));
+app.get("/video-call", (req, res) => res.render("video"));
 
 const httpServer = http.createServer(app);
 const wsServer = new Server(httpServer, {
@@ -21,6 +23,9 @@ const wsServer = new Server(httpServer, {
 
 instrument(wsServer, { auth: false });
 
+// Video Call
+
+// chatting
 function publicRooms() {
   const {
     sockets: {

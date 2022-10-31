@@ -1,0 +1,19 @@
+doctype html 
+html 
+    head
+        title Noom
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.11/mvp.css")
+    body
+        header
+            h1 Noom 
+            nav 
+                ul 
+                    li
+                        a(href="/chatting") Chatting
+                    li 
+                        a(href="/video-call") Video Call
+        main 
+            block content
+                   
+    script(src="/socket.io/socket.io.js")
+    block scripts
